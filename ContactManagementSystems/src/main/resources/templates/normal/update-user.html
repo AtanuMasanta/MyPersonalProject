@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>This is Home Page</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-3 ml-3">
+		
+			<div class="card-body">
+				<h1 class="text-center"> update your contact .</h1>
+				
+				<div class="container-fluid mt-1">
+				
+				<div class="row">
+					<div class="col-md-10 offset-md-1">
+					
+						<form action="#" th:object="${user}" method="post" 
+						th:action="@{/user/update-user/process}" class="mt-2">
+						
+							<input type="hidden" th:value="${user.id}" name="id">
+							
+							<div class="input-group">
+							
+								<div class="input-group-prepend">
+									
+									<div class="input-group-text">
+									
+										<i class="fa fa-plus"></i>
+									
+									</div>
+									
+								</div>
+								
+								<input th:value="${user.name}" required type="text" id="name" name="name" placeholder="enter name here" class="form-control">
+							
+							</div>
+							
+							<div class="input-group mt-3">
+							
+								<div class="input-group-prepend">
+									
+									<div class="input-group-text">
+									
+										@
+									
+									</div>
+									
+								</div>
+								
+								<input required th:value="${user.email}" type="email" id="email" name="email" placeholder="enter your email here" class="form-control">
+							
+							</div>
+							
+							<div class="form-group mt-3">
+							
+								<textarea th:text="${user.about}" name="about" id="about" placeholder="enter contact description" class="form-control" rows="10"></textarea>
+							
+							</div>
+							
+							<div class="container text-center">
+							
+								<button class="btn btn-outline-primary">Update User</button>
+							
+							</div>
+						
+						</form>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>
+						
+	</section>
+</body>
+</html>	
