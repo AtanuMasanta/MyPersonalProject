@@ -1,0 +1,2 @@
+This is a spring boot application , using this we can send auto generated mail .Here only backend API's are created 
+.API's are tested from postman.
